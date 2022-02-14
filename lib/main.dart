@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'stepper.dart';
+import 'StarVehicleCategory.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
                   ),
                   child: IntrinsicHeight(
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
                           // StarPadalaLogo
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
                                   top: 20.0,
                                 ),
                                 child: Text(
-                                  'STAR PADALA',
+                                  'STAR CAR',
                                   style: TextStyle(
                                     color: Colors.yellow,
                                     fontSize: 20,
@@ -66,7 +68,7 @@ class MyApp extends StatelessWidget {
                         Container(
                           // height:100 ,
                           child: Image(
-                            width: 120,
+                            width: 130,
                             // height: 180,
                             image: AssetImage(
                               'images/truesedan.png',
@@ -77,63 +79,8 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                // SizedBox(
-                //   height: 10,
-                // ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-                  child: Container(
-                    height: 25,
-                    // color: Colors.white,
-                    child: Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.menu,
-                          color: Colors.white,
-                          size: 23.0,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(3),
-                            child: Container(
-                              color: Colors.white38,
-                              child: Row(
-                                children: <Widget>[
-                                  Image(
-                                    width: 15,
-                                    height: 15,
-                                    image: AssetImage(
-                                      'images/LocationPin.png',
-                                    ),
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        'My Home',
-                                        style: TextStyle(
-                                            fontSize: 5, color: Colors.white),
-                                      ),
-                                      Text(
-                                        'Malolos, Bulacan',
-                                        style: TextStyle(
-                                            fontSize: 5, color: Colors.white),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
                 SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15),
@@ -187,105 +134,46 @@ class MyApp extends StatelessWidget {
                         children: [
                           SizedBox(height: 20),
                           Text(
-                            'Describe your parcel Below:',
+                            'Car Brand',
                             style: TextStyle(
                               // fontWeight: FontWeight.bold,
                               fontSize: 18,
                               color: Colors.red,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 5),
-                          TextField(
-                            decoration: InputDecoration(
-                              isDense: true,
-                              contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.red,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 15),
-                          Text(
-                            'Special Instruction:',
-                            style: TextStyle(
-                              // fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                              color: Colors.red,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          TextField(
-                            decoration: InputDecoration(
-                              isDense: true,
-                              contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.red,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: Colors.white,
-                              border: Border(
-                                left: BorderSide(
-                                  color: Colors.grey,
-                                  width: 5,
-                                ),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 3,
-                                  blurRadius: 5,
-                                  offset: Offset(
-                                      0, 3), // changes position of shadow
-                                ),
-                              ],
-                            ),
-                            // decoration: BoxDecoration(
-                            //         borderRadius: const BorderRadius.only(
-                            //           topLeft: Radius.circular(20),
-                            //           topRight: Radius.circular(20),
-                            //         ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(right: 15.0, left: 15.0),
+                            child: Container(
+                              // decoration: BoxDecoration(
+                              //   boxShadow: [
+                              //     BoxShadow(
+                              //       blurRadius: 2,
+                              //       offset: Offset(0, -8),
+                              //       spreadRadius: -5,
+                              //       color: Colors.grey.withOpacity(.2),
+                              //     ),
+                              //   ],
+                              // ),
 
-                            height: 180,
-
-                            // child: Stepper(
-                            //   steps: [
-                            //     Step(
-                            //       title: Text('Step 1'),
-                            //       content: Text('Information for Step 1'),
-                            //     ),
-                            //     Step(
-                            //       title: Text('Step 2'),
-                            //       content: Text('Information for Step 2'),
-                            //     ),
-                            //   ],
-                            // ),
+                              height: 400,
+                              child: ListView.separated(
+                                scrollDirection: Axis.vertical,
+                                itemCount: 8,
+                                separatorBuilder: (context, _) => SizedBox(
+                                  height: 8,
+                                ),
+                                itemBuilder: (context, _) =>
+                                    StarVehicleCategory(),
+                              ),
+                            ),
                           ),
                         ],
                       ),
                     ),
                   ),
 
-                  // SetupPage(),
-                  // Container(
-                  //   child: Stepper(
-                  //     steps: [
-                  //       Step(title: Text('Pickup Location'), content: null),
-                  //     ],
-                  //   ),
-                  // ),
                   //------------Confirmation for Booking----------------------//
                   Container(
                     width: double.infinity,
@@ -304,7 +192,7 @@ class MyApp extends StatelessWidget {
                       children: [
                         Container(
                           child: ElevatedButton(
-                            child: Text('Continue'),
+                            child: Text('Proceed'),
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               primary: Colors.red,
@@ -320,34 +208,34 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
-              Positioned(
-                top: -20,
-                right: 20,
-                child: Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.red,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 3.0, // soften the shadow
-                        spreadRadius: 1.0, //extend the shadow
-                        offset: Offset(
-                          3.0, // Move to right 10  horizontally
-                          2.0, // Move to bottom 10 Vertically
-                        ),
-                      ),
-                    ],
-                  ),
-                  width: 40.0,
-                  height: 40.0,
-                  child: Icon(
-                    Icons.add_shopping_cart_rounded,
-                    color: Colors.white,
-                    size: 25.0,
-                  ),
-                ),
-              ),
+              // Positioned(
+              //   top: -20,
+              //   right: 20,
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //       shape: BoxShape.circle,
+              //       color: Colors.red,
+              //       boxShadow: [
+              //         BoxShadow(
+              //           color: Colors.grey,
+              //           blurRadius: 3.0, // soften the shadow
+              //           spreadRadius: 1.0, //extend the shadow
+              //           offset: Offset(
+              //             3.0, // Move to right 10  horizontally
+              //             2.0, // Move to bottom 10 Vertically
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //     width: 40.0,
+              //     height: 40.0,
+              //     child: Icon(
+              //       Icons.add_shopping_cart_rounded,
+              //       color: Colors.white,
+              //       size: 25.0,
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
