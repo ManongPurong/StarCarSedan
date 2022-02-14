@@ -121,12 +121,12 @@ class MyApp extends StatelessWidget {
                     //White container
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10),
                       ),
                       color: Colors.white,
                     ),
-                    height: 500,
+                    height: 560,
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Column(
@@ -169,73 +169,78 @@ class MyApp extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            width: double.infinity,
+                            //White container
+                            decoration: BoxDecoration(
+                              // borderRadius: const BorderRadius.only(
+                              //   topLeft: Radius.circular(20),
+                              //   topRight: Radius.circular(20),
+                              // ),
+                              color: Colors.white,
+                            ),
+                            height: 60,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  child: ElevatedButton(
+                                    child: Text('Proceed'),
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.red,
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 30, vertical: 10),
+                                      textStyle: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
 
                   //------------Confirmation for Booking----------------------//
-                  Container(
-                    width: double.infinity,
-                    //White container
-                    decoration: BoxDecoration(
-                      // borderRadius: const BorderRadius.only(
-                      //   topLeft: Radius.circular(20),
-                      //   topRight: Radius.circular(20),
-                      // ),
-                      color: Colors.white,
-                    ),
-                    height: 60,
-
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: ElevatedButton(
-                            child: Text('Proceed'),
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.red,
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 10),
-                              textStyle: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   width: double.infinity,
+                  //   //White container
+                  //   decoration: BoxDecoration(
+                  //     // borderRadius: const BorderRadius.only(
+                  //     //   topLeft: Radius.circular(20),
+                  //     //   topRight: Radius.circular(20),
+                  //     // ),
+                  //     color: Colors.white,
+                  //   ),
+                  //   height: 80,
+                  //   child: Column(
+                  //     crossAxisAlignment: CrossAxisAlignment.center,
+                  //     children: [
+                  //       Container(
+                  //         child: ElevatedButton(
+                  //           child: Text('Proceed'),
+                  //           onPressed: () {},
+                  //           style: ElevatedButton.styleFrom(
+                  //             primary: Colors.red,
+                  //             padding: EdgeInsets.symmetric(
+                  //                 horizontal: 30, vertical: 10),
+                  //             textStyle: TextStyle(
+                  //                 fontSize: 18, fontWeight: FontWeight.bold),
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
-              // Positioned(
-              //   top: -20,
-              //   right: 20,
-              //   child: Container(
-              //     decoration: BoxDecoration(
-              //       shape: BoxShape.circle,
-              //       color: Colors.red,
-              //       boxShadow: [
-              //         BoxShadow(
-              //           color: Colors.grey,
-              //           blurRadius: 3.0, // soften the shadow
-              //           spreadRadius: 1.0, //extend the shadow
-              //           offset: Offset(
-              //             3.0, // Move to right 10  horizontally
-              //             2.0, // Move to bottom 10 Vertically
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //     width: 40.0,
-              //     height: 40.0,
-              //     child: Icon(
-              //       Icons.add_shopping_cart_rounded,
-              //       color: Colors.white,
-              //       size: 25.0,
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),
